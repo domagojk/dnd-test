@@ -32,6 +32,7 @@ function App() {
         EditorView.domEventHandlers({
           drop: (event) => {
             if (event.dataTransfer.effectAllowed !== "all") {
+              // this is a hack - needs a better way to differantiate between D&D from outside and from within codemirror
               return;
             }
             const cursor = view.posAtCoords({
